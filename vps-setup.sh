@@ -7,10 +7,7 @@ sudo apt update
 echo "Membuka port SSH"
 sudo ufw allow ssh
 sudo ufw enable
-
-# Konfirmasi pembukaan port
 echo "Port SSH telah dibuka."
-sudo ufw status
 
 # Install Node js
 echo "Install Node js...."
