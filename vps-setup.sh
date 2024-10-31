@@ -3,8 +3,19 @@
 # Perbarui package manager
 sudo apt update
 
+# Buka port SSH
+echo "Membuka port SSH"
+sudo ufw allow ssh
+sudo ufw enable
+
+# Konfirmasi pembukaan port
+echo "Port SSH telah dibuka."
+sudo ufw status
+
 # Install Node js
-sudo apt install zip
+echo "Install Node js...."
+sudo apt install zip -y
+sudo apt install htop -y
 curl -fsSL https://fnm.vercel.app/install | bash
 source ~/.bashrc
 fnm use --install-if-missing 22.11.0
@@ -24,18 +35,8 @@ if ! command -v git &> /dev/null; then
 else
     echo "Git sudah terinstal."
 fi
-
-# Buka port SSH
-echo "Membuka port SSH"
-sudo ufw allow ssh
-sudo ufw enable
-
-# Konfirmasi pembukaan port
-echo "Port SSH telah dibuka."
-sudo ufw status
-sudo apt install htop
-
 # Install Docker Engine
+echo "Install Docker Engine...."
 sudo apt-get update
 sudo apt-get install ca-certificates curl
 sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
@@ -48,6 +49,7 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
 # Install Python
+echo "Install Python...."
 sudo apt install software-properties-common -y
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
@@ -56,7 +58,18 @@ sudo ln -sf /usr/bin/python3 /usr/bin/python
 
 
 # Install Rivalz Node
+echo "Install Rivalz Node...."
 npm i -g rivalz-node-cli
 
 # Install Nillion Verifier
+echo "Install Nillion Verifier...."
 docker pull nillion/verifier:v1.0.1
+
+# Install Dawn Internet Bot
+echo "Installing Dawn Internet Bot...."
+git clone https://github.com/nadiva-anggraini/dawn-bot
+cd dawn-bot
+sudo apt install python3-pip -y
+pip install -r requirements.txt
+cd
+echo "Done...."
