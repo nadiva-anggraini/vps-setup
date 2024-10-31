@@ -14,8 +14,8 @@ sudo ufw status
 
 # Install Node js
 echo "Install Node js...."
-sudo apt install zip -y
-sudo apt install htop -y
+sudo apt install -y zip
+sudo apt install -y htop
 curl -fsSL https://fnm.vercel.app/install | bash
 source ~/.bashrc
 fnm use --install-if-missing 22.11.0
@@ -50,10 +50,10 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 
 # Install Python
 echo "Install Python...."
-sudo apt install software-properties-common -y
+sudo apt install -y software-properties-common
 sudo add-apt-repository ppa:deadsnakes/ppa
 sudo apt update
-sudo apt install python3.13 -y
+sudo apt install -y python3.13
 sudo ln -sf /usr/bin/python3 /usr/bin/python
 
 
@@ -69,7 +69,7 @@ docker pull nillion/verifier:v1.0.1
 echo "Installing Dawn Internet Bot...."
 git clone https://github.com/nadiva-anggraini/dawn-bot
 cd dawn-bot
-sudo apt install python3-pip -y
+sudo apt install -y python3-pip
 pip install -r requirements.txt
 cd
 echo "Done...."
