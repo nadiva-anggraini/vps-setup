@@ -11,7 +11,7 @@ echo "Port SSH telah dibuka."
 
 # Install Node js
 echo "Install Node js...."
-sudo apt install zip
+apt install zip
 sudo apt install htop
 curl -fsSL https://fnm.vercel.app/install | bash
 source ~/.bashrc
